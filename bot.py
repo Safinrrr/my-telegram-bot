@@ -2,7 +2,7 @@ from telegram.ext import Updater, CommandHandler
 import requests
 
 
-url = '6596347347:AAGcRtZ1FOXz0Wt4PymaXzOhZO40vqHDf2A'
+url = 'https://api.exchangerate-api.com/v4/latest/USD'
 data = requests.get(url) # requests data from API
 data = data.json() # converts return data to json
 
@@ -29,7 +29,7 @@ def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text='Hi! I respond to /weather and /currency. Try these!')
 
 def main():
-    TOKEN = "YOUR-BOT-TOKEN-HERE"
+    TOKEN = "6596347347:AAGcRtZ1FOXz0Wt4PymaXzOhZO40vqHDf2A"
     updater = Updater(token=TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
